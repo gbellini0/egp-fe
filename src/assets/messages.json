@@ -1,0 +1,25 @@
+[
+    {
+        "message" : "sint pariatur in cupidatat nulla veniam qui eiusmod nostrud sunt do velit Lorem eiusmod veniam et aliqua minim deserunt enim ad mollit qui ad cupidatat enim pariatur non esse officia cillum duis id occaecat eiusmod velit in ut culpa ipsum magna sint incididunt sit magna ea nisi ut anim quis exercitation nulla amet exercitation commodo qui commodo ullamco fugiat nulla incididunt excepteur id qui enim",
+        "from" : "Daniele Verdi",
+        "date" : "1639065646",
+        "img" : "../../assets/imgs/img_avatar1.png",
+        "show" : "true"
+    },
+
+    {
+        "message" : "excepteur consectetur cillum velit duis laboris velit ex amet consectetur eiusmod minim elit magna eiusmod",
+        "from" : "Laura Prado",
+        "date" : "1639036671",
+        "img" : "../../assets/imgs/img_avatar2.png",
+        "show" : "true"
+    },
+
+    {
+        "message" : "ullamco cupidatat excepteur labore qui sunt tempor deserunt est aute ea cupidatat nostrud cillum ex est excepteur sit eiusmod occaecat officia commodo duis labore dolore irure nulla labore reprehenderit id minim commodo enim culpa id ex cupidatat amet sint sit consequat sint incididunt in cupidatat culpa ea amet veniam duis officia excepteur ea consequat officia reprehenderit aliqua nostrud eiusmod eiusmod eu fugiat nisi qui pariatur sunt dolor minim dolor laboris amet labore magna ipsum irure anim eiusmod sit duis magna dolor excepteur excepteur et officia eu laborum et non cupidatat proident nisi cillum in consectetur laboris consequat ullamco adipisicing consectetur",
+        "from": "Mario Rossi",
+        "date" : "1638604671",
+        "img" : "../../assets/imgs/img_avatar3.png",
+        "show" : "true"
+    }
+]
