@@ -7,10 +7,13 @@ import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
 })
 export class ReadMoreComponent implements AfterViewInit {
 
+    //message text
     @Input() text: string | undefined;
 
+    //maximum height before collapse
     @Input() maxHeight!: number;
 
+    //author of message
     @Input() from: string | undefined
 
     public isCollapsed: boolean = false;
