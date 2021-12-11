@@ -1,0 +1,46 @@
+<div #chatHistory id="chat-history" class="chat-history" style="min-width: 375px; max-width: 1200px">
+    <div class="card">
+      <div class="card-content">
+        <div class="chatFilter">
+          <div class="columns">
+            <div class="column is-four-fifths">
+              <input class="input is-small" type="text" [(ngModel)]="chatFilter" placeholder="filter chat">
+            </div>
+            <div class="column is-one-fifths">
+              <button class="button is-small is-info" (click)="filterChat();">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li *ngFor="let element of messageList" class="clearfix">
+        <div *ngIf="element.from !== loggedUser && element.show === 'true'">
+          <div class="message-data align-left">
+            <img src="{{element.img}}" style="width:30px; height: 30px; border-radius: '15px';"/> <span class="message-data-name align-right" >&nbsp;&nbsp;{{element.from}}</span>
+            <span class="message-data-time" >{{element.date | date:'medium' :'+0000'}}</span> &nbsp; &nbsp;
+          </div>
+          <app-readmore [text]="element.message" [maxHeight]="100" [from]="element.from">
+          </app-readmore>
+        </div>
+        <div *ngIf="element.from === loggedUser && element.show === 'true'">
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >{{element.date | date:'medium' :'+0000'}}</span>
+              <span class="message-data-name" >  {{element.from}}&nbsp;<img src="../../assets/imgs/img_avatar_me.png" style="width:30px; height: 30px; border-radius: '15px';"/></span>
+            </div>
+            <app-readmore [text]="element.message" [maxHeight]="100" [from]="element.from">
+            </app-readmore>
+          </li>
+        </div>
+      </li>
+    </ul>
+</div>
+<div class="box" style="min-width: 375px; max-width: 1200px">
+  <div class="box-content">
+    <input type="text" class="input is-fullwidth is-small" [(ngModel)]="textMessage" placeholder="input text"/>
+    <div class="buttons is-right">
+      <button [disabled]="textMessage.trim() === ''" class="button is-danger is-small" (click)="submitText()" style="margin-top:2%">&nbsp;Publish&nbsp;</button>
+    </div>
+  </div>
+</div>
