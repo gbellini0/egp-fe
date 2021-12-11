@@ -15,7 +15,7 @@ export class AdvancedNotesComponent implements OnInit,AfterViewInit {
   loggedUser: string | null = null
   chatFilter: string | null = ''
   
-  constructor() {
+  constructor(private ref: ChangeDetectorRef) {
   }
 
   ngAfterViewInit(): void {
@@ -52,6 +52,10 @@ export class AdvancedNotesComponent implements OnInit,AfterViewInit {
     } else {
       window.localStorage.setItem('userMessages','[' + JSON.stringify(mes) + ']')
     }
+    
+    //scroll to bottom
+    this.ref.detectChanges()
+    this.ngAfterViewInit()
   }
 
   scrollToBottom(): void {
