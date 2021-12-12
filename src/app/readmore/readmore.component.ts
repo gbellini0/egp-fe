@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-readmore',
@@ -16,18 +16,24 @@ export class ReadMoreComponent implements AfterViewInit {
     //author of message
     @Input() from: string | undefined
 
+    @ViewChild('otherMessage') otherMessage!: ElementRef ;
+    @ViewChild('meMessage') meMessage!: ElementRef ;
+
+
     public isCollapsed: boolean = false;
     public isCollapsable: boolean = false;
 
-    constructor(private elementRef: ElementRef) {
+    constructor() {
     }
 
     ngAfterViewInit() {
-        let currentHeight = this.from === this.getUser() ? this.elementRef.nativeElement.getElementsByTagName('div')[0].scrollHeight : this.elementRef.nativeElement.getElementsByTagName('div')[0].offsetHeight;
-        if (currentHeight > this.maxHeight) {
-            this.isCollapsed = true;
-            this.isCollapsable = true;
-        }
+      let elementRef = null
+      this.meMessage === undefined ? elementRef = this.otherMessage : elementRef = this.meMessage;
+      let currentHeight = this.from === this.getUser() ? elementRef?.nativeElement.scrollHeight : elementRef?.nativeElement.offsetHeight;
+      if (currentHeight > this.maxHeight) {
+          this.isCollapsed = true;
+          this.isCollapsable = true;
+      }
     }
 
     getUser(){

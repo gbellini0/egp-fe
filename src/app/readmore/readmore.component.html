@@ -1,10 +1,10 @@
 <div *ngIf="from !== getUser()" style="margin:0; padding:0;">
-    <div [innerHTML]="text" class="message other-message float-left" [class.collapsed]="isCollapsed" [style.height]="isCollapsed ? maxHeight+'px' : 'auto'" [style.margin]='0'>
+    <div #otherMessage [innerHTML]="text" class="message other-message float-left" [class.collapsed]="isCollapsed" [style.height]="isCollapsed ? maxHeight+'px' : 'auto'" [style.margin]='0'>
     </div><a *ngIf="isCollapsable" (click)="isCollapsed =! isCollapsed"><b>{{isCollapsed? 'read more...':'read less...'}}</b></a>
 </div>
 
 <div *ngIf="from === getUser()">
-    <div [innerHTML]="text" class="message my-message float-right" [class.collapsed]="isCollapsed" style="margin-bottom: 0;"[style.height]="isCollapsed ? maxHeight+'px' : 'auto'">
+    <div #meMessage [innerHTML]="text" class="message my-message float-right" [class.collapsed]="isCollapsed" style="margin-bottom: 0;"[style.height]="isCollapsed ? maxHeight+'px' : 'auto'">
     </div>
     <a *ngIf="isCollapsable" (click)="isCollapsed =! isCollapsed" class="readmore"><b>{{isCollapsed? 'read more...':'read less...'}}</b></a>
 </div>

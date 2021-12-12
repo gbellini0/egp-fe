@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <ul>
+    <ul (change)="this.scrollToBottom()">
       <li *ngFor="let element of messageList" class="clearfix">
         <div *ngIf="element.from !== loggedUser && element.show === 'true'">
           <div class="message-data align-left">
@@ -36,7 +36,7 @@
       </li>
     </ul>
 </div>
-<div class="box" style="min-width: 375px; max-width: 1200px">
+<div class="box" style="min-width: 375px; max-width: 1200px; background-color: #F1F4F9;">
   <div class="box-content">
     <input type="text" class="input is-fullwidth is-small" [(ngModel)]="textMessage" placeholder="input text"/>
     <div class="buttons is-right">

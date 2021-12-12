@@ -25,14 +25,14 @@ div.collapsed {
       width: 0;
       position: absolute;
       pointer-events: none;
-      border-bottom-color: lightgray;
+      border-bottom-color: #F1F4F9;
       border-width: 10px;
       margin-left: -10px;
     }
   
   
   .my-message {
-    background: lightblue;
+    background: #C5D1E1;
   }
 
   .my-message:after{
@@ -44,13 +44,13 @@ div.collapsed {
       width: 0;
       position: absolute;
       pointer-events: none;
-      border-bottom-color: lightblue;
+      border-bottom-color: #C5D1E1;
       border-width: 10px;
       margin-left: -10px;
   }
   
   .other-message {
-    background: lightgray;
+    background: #F1F4F9;
   }
 
 .chat-message {
