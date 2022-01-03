@@ -26,7 +26,7 @@ export class ReadMoreComponent implements AfterViewInit {
     constructor() {
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void  {
       let elementRef = null
       this.meMessage === undefined ? elementRef = this.otherMessage : elementRef = this.meMessage;
       let currentHeight = this.from === this.getUser() ? elementRef?.nativeElement.scrollHeight : elementRef?.nativeElement.offsetHeight;
@@ -36,7 +36,7 @@ export class ReadMoreComponent implements AfterViewInit {
       }
     }
 
-    getUser(){
+    getUser(): string {
       return 'Me'
     }
 }

@@ -33,7 +33,7 @@ export class AdvancedNotesComponent implements OnInit,AfterViewInit {
     this.sortArray()
   }
 
-  submitText(){
+  submitText(): void {
     var mes = null
     if(this.textMessage.trim() != ''){
       mes = {
@@ -63,7 +63,7 @@ export class AdvancedNotesComponent implements OnInit,AfterViewInit {
     },100)
   }
 
-  resumeMessages(){
+  resumeMessages(): void {
     let msgs: any = window.localStorage.getItem('userMessages')
     let messagesArray = JSON.parse(msgs)
     if(messagesArray.length > 1){
@@ -74,19 +74,19 @@ export class AdvancedNotesComponent implements OnInit,AfterViewInit {
     this.sortArray()
   }
 
-  filterChat(){
+  filterChat(): void {
     this.messageList.forEach(msg => {
       msg.from.search(this.chatFilter) == -1 ? msg.show = 'false' : msg.show = 'true'
     })
   }
 
-  sortArray(){
+  sortArray(): void {
     this.messageList = this.messageList.sort((a, b) => {
       return new Date(a.date) > new Date(b.date) ? 1: -1
      })
   }
 
-  getUser(){
+  getUser(): void {
     this.loggedUser = 'Me'
   }
 
